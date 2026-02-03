@@ -1,43 +1,34 @@
 -- lualine theme for mfd-amber colorscheme
-local c = {
-  bg      = '#0F0C08',
-  fg      = '#CC9944',
-  dim     = '#382818',
-  subtle  = '#4A3820',
-  mode    = '#2A1C10',
-  insert  = '#3A2810',
-  replace = '#2A1008',
-}
-
+-- near-black bg (#0F0C08), warm amber fg (#CC9944)
 return {
   normal = {
-    a = { fg = c.fg, bg = c.mode, gui = 'bold' },
-    b = { fg = c.dim, bg = c.bg },
-    c = { fg = c.dim, bg = c.bg },
+    a = { fg = '#0F0C08', bg = '#CC9944', gui = 'bold' },
+    b = { fg = '#FFBB55', bg = '#2A1C10' },
+    c = { fg = '#CC9944', bg = '#141008' },
   },
   insert = {
-    a = { fg = c.fg, bg = c.insert, gui = 'bold' },
-    b = { fg = c.dim, bg = c.bg },
-    c = { fg = c.dim, bg = c.bg },
+    a = { fg = '#0F0C08', bg = '#FFBB55', gui = 'bold' },
+    b = { fg = '#FFBB55', bg = '#2A1C10' },
+    c = { fg = '#CC9944', bg = '#141008' },
   },
   visual = {
-    a = { fg = c.fg, bg = c.bg, gui = 'bold' },
-    b = { fg = c.dim, bg = c.bg },
-    c = { fg = c.dim, bg = c.bg },
+    a = { fg = '#0F0C08', bg = '#AA7733', gui = 'bold' },
+    b = { fg = '#FFBB55', bg = '#2A1C10' },
+    c = { fg = '#CC9944', bg = '#141008' },
   },
   replace = {
-    a = { fg = c.fg, bg = c.replace, gui = 'bold' },
-    b = { fg = c.dim, bg = c.bg },
-    c = { fg = c.dim, bg = c.bg },
+    a = { fg = '#0F0C08', bg = '#CC7733', gui = 'bold' },
+    b = { fg = '#FFBB55', bg = '#2A1C10' },
+    c = { fg = '#CC9944', bg = '#141008' },
   },
   command = {
-    a = { fg = c.fg, bg = c.mode, gui = 'bold' },
-    b = { fg = c.dim, bg = c.bg },
-    c = { fg = c.dim, bg = c.bg },
+    a = { fg = '#0F0C08', bg = '#CC9944', gui = 'bold' },
+    b = { fg = '#FFBB55', bg = '#2A1C10' },
+    c = { fg = '#CC9944', bg = '#141008' },
   },
   inactive = {
-    a = { fg = c.subtle, bg = c.bg },
-    b = { fg = c.subtle, bg = c.bg },
-    c = { fg = c.subtle, bg = c.bg },
+    a = { fg = '#382818', bg = '#141008' },
+    b = { fg = '#382818', bg = '#141008' },
+    c = { fg = '#382818', bg = '#141008' },
   },
 }

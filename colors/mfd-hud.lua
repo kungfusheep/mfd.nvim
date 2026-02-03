@@ -33,6 +33,11 @@ hi('lCursor',      { fg = c.bg, bg = c.bright })
 hi('CursorIM',     { fg = c.bg, bg = c.bright })
 hi('TermCursor',   { fg = c.bg, bg = c.bright })
 hi('TermCursorNC', { fg = c.bg, bg = c.dim })
+hi('CursorNormal',  { fg = c.bg, bg = '#55BB55' })  -- vivid green, home base
+hi('CursorInsert',  { fg = c.bg, bg = '#88EE88' })  -- bright hot green, max pop
+hi('CursorVisual',  { fg = c.bg, bg = '#338833' })  -- darker green, selection
+hi('CursorReplace', { fg = c.bg, bg = '#70DD70' })  -- bright vivid green, between normal/insert
+hi('CursorCommand', { fg = c.bg, bg = '#55BB55' })  -- same as normal
 hi('CursorLine',   { bg = c.cursor })
 hi('CursorColumn', { bg = c.cursor })
 hi('LineNr',       { fg = c.subtle })

@@ -1,4 +1,4 @@
--- MFD: Military Flight Display colorscheme for Neovim
+-- MFD: Multi-Function Display colorscheme for Neovim
 -- Monotone themes using text decoration for syntax highlighting
 
 local M = {}
@@ -82,6 +82,17 @@ M.palettes = {
     border   = '#95A592',
     float_bg = '#C5CFC2',
   },
+  ['mfd-hud'] = {
+    bg       = '#060C06',
+    fg       = '#55BB55',
+    dim      = '#1A3018',
+    bright   = '#77DD77',
+    subtle   = '#1A2A18',
+    visual   = '#0A1A0A',
+    cursor   = '#081208',
+    border   = '#1A3018',
+    float_bg = '#081008',
+  },
   ['mfd-nvg'] = {
     bg       = '#162014',
     fg       = '#78B858',
@@ -95,76 +106,10 @@ M.palettes = {
   },
 }
 
--- Mode colors for cursor/lualine animations
-M.mode_colors = {
-  mfd = {
-    normal  = '#1E2D1E',
-    insert  = '#2D4D2D',
-    visual  = '#0D1D0D',
-    replace = '#3D2D1D',
-    command = '#1E2D1E',
-  },
-  ['mfd-dark'] = {
-    normal  = '#8A9B70',
-    insert  = '#A0B180',
-    visual  = '#6A7B50',
-    replace = '#9B8A60',
-    command = '#8A9B70',
-  },
-  ['mfd-stealth'] = {
-    normal  = '#253828',
-    insert  = '#354838',
-    visual  = '#152818',
-    replace = '#382828',
-    command = '#253828',
-  },
-  ['mfd-amber'] = {
-    normal  = '#2D2510',
-    insert  = '#4D4520',
-    visual  = '#1D1508',
-    replace = '#4D2D10',
-    command = '#2D2510',
-  },
-  ['mfd-mono'] = {
-    normal  = '#282830',
-    insert  = '#383848',
-    visual  = '#181820',
-    replace = '#382830',
-    command = '#282830',
-  },
-  ['mfd-scarlet'] = {
-    normal  = '#3A1812',
-    insert  = '#4A2822',
-    visual  = '#2A0808',
-    replace = '#3A1818',
-    command = '#3A1812',
-  },
-  ['mfd-paper'] = {
-    normal  = '#002611',
-    insert  = '#103620',
-    visual  = '#001608',
-    replace = '#261100',
-    command = '#002611',
-  },
-  ['mfd-nvg'] = {
-    normal  = '#3A6030',
-    insert  = '#4A7040',
-    visual  = '#2A5020',
-    replace = '#504830',
-    command = '#3A6030',
-  },
-}
-
 -- Get palette for current or specified colorscheme
 function M.get_palette(scheme)
   scheme = scheme or vim.g.colors_name or 'mfd'
   return M.palettes[scheme] or M.palettes.mfd
-end
-
--- Get mode colors for current or specified colorscheme
-function M.get_mode_colors(scheme)
-  scheme = scheme or vim.g.colors_name or 'mfd'
-  return M.mode_colors[scheme] or M.mode_colors.mfd
 end
 
 -- Check if current colorscheme is an MFD variant
@@ -173,43 +118,55 @@ function M.is_mfd()
   return scheme:match('^mfd') ~= nil
 end
 
--- Lualine theme builder
-function M.lualine_theme(scheme)
-  local p = M.get_palette(scheme)
-  local mc = M.get_mode_colors(scheme)
-
-  return {
-    normal = {
-      a = { bg = mc.normal, fg = p.bg, gui = 'bold' },
-      b = { bg = p.float_bg, fg = mc.normal },
-      c = { bg = p.float_bg, fg = p.dim },
-    },
-    insert = {
-      a = { bg = mc.insert, fg = p.bg, gui = 'bold' },
-      b = { bg = p.float_bg, fg = mc.insert },
-      c = { bg = p.float_bg, fg = p.dim },
-    },
-    visual = {
-      a = { bg = mc.visual, fg = p.bg, gui = 'bold' },
-      b = { bg = p.float_bg, fg = mc.visual },
-      c = { bg = p.float_bg, fg = p.dim },
-    },
-    replace = {
-      a = { bg = mc.replace, fg = p.bg, gui = 'bold' },
-      b = { bg = p.float_bg, fg = mc.replace },
-      c = { bg = p.float_bg, fg = p.dim },
-    },
-    command = {
-      a = { bg = mc.command, fg = p.bg, gui = 'bold' },
-      b = { bg = p.float_bg, fg = mc.command },
-      c = { bg = p.float_bg, fg = p.dim },
-    },
-    inactive = {
-      a = { bg = p.float_bg, fg = p.dim },
-      b = { bg = p.float_bg, fg = p.dim },
-      c = { bg = p.float_bg, fg = p.dim },
-    },
+-- sync terminal cursor color on mode changes via OSC 12
+function M.enable_cursor_sync()
+  local mode_hl = {
+    n = 'CursorNormal',
+    i = 'CursorInsert',
+    v = 'CursorVisual',
+    V = 'CursorVisual',
+    ['\22'] = 'CursorVisual',
+    R = 'CursorReplace',
+    c = 'CursorCommand',
   }
+
+  local function osc(seq)
+    if vim.env.TMUX then
+      io.write('\027Ptmux;\027' .. seq .. '\027\\')
+    else
+      io.write(seq)
+    end
+  end
+
+  local function sync()
+    local mode = vim.api.nvim_get_mode().mode:sub(1, 1)
+    local hl = vim.api.nvim_get_hl(0, { name = mode_hl[mode] or 'CursorNormal' })
+    if hl.bg then
+      osc(string.format('\027]12;#%06x\007', hl.bg))
+    end
+  end
+
+  local group = vim.api.nvim_create_augroup('MfdCursorSync', { clear = true })
+
+  vim.api.nvim_create_autocmd('ModeChanged', {
+    group = group,
+    pattern = '*',
+    callback = sync,
+  })
+
+  vim.api.nvim_create_autocmd('ColorScheme', {
+    group = group,
+    pattern = 'mfd*',
+    callback = sync,
+  })
+
+  -- reset cursor color when leaving nvim
+  vim.api.nvim_create_autocmd('VimLeavePre', {
+    group = group,
+    callback = function() osc('\027]112\007') end,
+  })
+
+  sync()
 end
 
 return M

@@ -2,7 +2,7 @@
 
 Monotone colorschemes for Neovim. Aesthetic inspiration from [U.S. Graphics Company](https://usgraphics.com) — thanks for the beautiful work.
 
-Nine variants, from phosphor CRTs to high contrast paper.
+Nine variants, from phosphor CRTs to night vision.
 
 ## Themes
 
@@ -38,7 +38,7 @@ High contrast terminal.
 ![mfd-paper](screenshots/mfd-paper.png)
 
 ### mfd-hud
-Heads-up display.
+Heads-up display symbology.
 
 ![mfd-hud](screenshots/mfd-hud.png)
 
@@ -70,3 +70,28 @@ Syntax differentiation through text decoration, not colour:
 - <ins>Underline</ins> — types, structures
 
 Lualine themes are included for each variant.
+
+## Cursor sync
+
+Each theme defines per-mode cursor highlights (`CursorNormal`, `CursorInsert`, `CursorVisual`, `CursorReplace`, `CursorCommand`). To sync these to your terminal cursor via OSC 12 (works with Ghostty, kitty, etc.):
+
+```lua
+{
+  'kungfusheep/mfd.nvim',
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.cmd('colorscheme mfd-stealth')
+
+    vim.opt.guicursor = {
+      "n:block-CursorNormal",
+      "v:block-CursorVisual",
+      "i:block-CursorInsert",
+      "r-cr:block-CursorReplace",
+      "c:block-CursorCommand",
+    }
+
+    require('mfd').enable_cursor_sync()
+  end,
+}
+```
