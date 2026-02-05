@@ -277,8 +277,8 @@ hi('GitSignsDeleteInline',  { bg = '#100A0A' })
 hi('GitSignsChangeInline',  { bg = c.cursor })
 
 -- Telescope
-hi('TelescopeNormal',        { fg = c.fg, bg = c.float_bg })
-hi('TelescopeBorder',        { fg = c.dim, bg = c.float_bg })
+hi('TelescopeNormal',        { fg = c.fg, bg = c.visual })
+hi('TelescopeBorder',        { fg = c.dim, bg = c.visual })
 hi('TelescopePromptNormal',  { fg = c.fg, bg = c.visual })
 hi('TelescopePromptBorder',  { fg = c.dim, bg = c.visual })
 hi('TelescopePromptTitle',   { fg = c.bg, bg = c.fg, bold = true })
