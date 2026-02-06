@@ -16,6 +16,11 @@ local c = {
   float_bg = '#C5CFC2',  -- floating windows
 }
 
+local comment = c.dim
+if require('mfd').config.bright_comments then
+  comment = '#3A5038'
+end
+
 local function hi(group, opts)
   vim.api.nvim_set_hl(0, group, opts)
 end
@@ -33,11 +38,11 @@ hi('lCursor',      { fg = c.bg, bg = c.fg })
 hi('CursorIM',     { fg = c.bg, bg = c.fg })
 hi('TermCursor',   { fg = c.bg, bg = c.fg })
 hi('TermCursorNC', { fg = c.bg, bg = c.dim })
-hi('CursorNormal',  { fg = c.bg, bg = '#1A4A2A' })  -- saturated dark green
-hi('CursorInsert',  { fg = c.bg, bg = '#002611' })  -- near-black forest, max contrast
-hi('CursorVisual',  { fg = c.bg, bg = '#3A6A3A' })  -- medium green, lifted
-hi('CursorReplace', { fg = c.bg, bg = '#0A3018' })  -- deep green, between normal/insert
-hi('CursorCommand', { fg = c.bg, bg = '#1A4A2A' })  -- same as normal
+hi('CursorNormal',  { fg = c.bg, bg = '#1A4A2A' })
+hi('CursorInsert',  { fg = c.bg, bg = '#002611' })
+hi('CursorVisual',  { fg = c.bg, bg = '#3A6A3A' })
+hi('CursorReplace', { fg = c.bg, bg = '#0A3018' })
+hi('CursorCommand', { fg = c.bg, bg = '#1A4A2A' })
 hi('CursorLine',   { bg = c.cursor })
 hi('CursorColumn', { bg = c.cursor })
 hi('LineNr',       { fg = c.subtle })
@@ -92,7 +97,7 @@ hi('DiffDelete',   { fg = c.dim, bg = '#C0B5B0' })
 hi('DiffText',     { bg = '#95A590', bold = true })
 
 -- Syntax: monotone with decoration
-hi('Comment',      { fg = c.dim, italic = true })
+hi('Comment',      { fg = comment, italic = true })
 hi('Constant',     { fg = c.fg })
 hi('String',       { fg = c.fg, italic = true })
 hi('Character',    { fg = c.fg })
@@ -121,7 +126,7 @@ hi('Special',      { fg = c.fg })
 hi('SpecialChar',  { fg = c.fg, bold = true })
 hi('Tag',          { fg = c.fg, underline = true })
 hi('Delimiter',    { fg = c.fg })
-hi('SpecialComment', { fg = c.dim, bold = true, italic = true })
+hi('SpecialComment', { fg = comment, bold = true, italic = true })
 hi('Debug',        { fg = c.fg })
 hi('Underlined',   { fg = c.fg, underline = true })
 hi('Ignore',       { fg = c.subtle })
@@ -173,8 +178,8 @@ hi('@punctuation',        { fg = c.fg })
 hi('@punctuation.bracket',    { fg = c.fg })
 hi('@punctuation.delimiter',  { fg = c.fg })
 hi('@punctuation.special',    { fg = c.fg, bold = true })
-hi('@comment',            { fg = c.dim, italic = true })
-hi('@comment.documentation', { fg = c.dim, italic = true })
+hi('@comment',            { fg = comment, italic = true })
+hi('@comment.documentation', { fg = comment, italic = true })
 hi('@tag',                { fg = c.fg, bold = true })
 hi('@tag.attribute',      { fg = c.fg, italic = true })
 hi('@tag.delimiter',      { fg = c.fg })

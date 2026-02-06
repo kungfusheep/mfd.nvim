@@ -2,7 +2,13 @@
 
 Monotone colorschemes for Neovim. Aesthetic inspiration from [U.S. Graphics Company](https://usgraphics.com) — thanks for the beautiful work.
 
-Nine variants, from phosphor CRTs to night vision.
+Ten variants, from phosphor CRTs to night vision.
+
+> [!TIP]
+> **New:**  
+> `mfd-blackout` true black, ultra-low contrast for late night use.  
+> `bright_comments` option increases comment visibility for all themes.
+
 
 ## Themes
 
@@ -100,3 +106,19 @@ Each theme defines per-mode cursor highlights (`CursorNormal`, `CursorInsert`, `
   end,
 }
 ```
+
+## Options
+
+Call `setup()` before setting the colorscheme:
+
+```lua
+require('mfd').setup({
+  bright_comments = true, -- increase comment visibility (default: false)
+})
+```
+
+## License
+
+Apache 2.0 [LICENSE](LICENSE)
+
+

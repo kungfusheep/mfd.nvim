@@ -3,6 +3,14 @@
 
 local M = {}
 
+M.config = {
+  bright_comments = false,
+}
+
+function M.setup(opts)
+  M.config = vim.tbl_extend('force', M.config, opts or {})
+end
+
 -- Color palettes for each variant
 M.palettes = {
   mfd = {

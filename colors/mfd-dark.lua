@@ -16,6 +16,11 @@ local c = {
   float_bg = '#253525',  -- floating windows (slightly lighter than bg)
 }
 
+local comment = c.dim
+if require('mfd').config.bright_comments then
+  comment = '#607258'
+end
+
 local function hi(group, opts)
   vim.api.nvim_set_hl(0, group, opts)
 end
@@ -92,7 +97,7 @@ hi('DiffDelete',   { fg = c.dim, bg = '#3D2D2D' })
 hi('DiffText',     { bg = '#3A4D3A', bold = true })
 
 -- Syntax: monotone with decoration
-hi('Comment',      { fg = c.dim, italic = true })
+hi('Comment',      { fg = comment, italic = true })
 hi('Constant',     { fg = c.fg })
 hi('String',       { fg = c.fg, italic = true })
 hi('Character',    { fg = c.fg })
@@ -121,7 +126,7 @@ hi('Special',      { fg = c.fg })
 hi('SpecialChar',  { fg = c.fg, bold = true })
 hi('Tag',          { fg = c.fg, underline = true })
 hi('Delimiter',    { fg = c.fg })
-hi('SpecialComment', { fg = c.dim, bold = true, italic = true })
+hi('SpecialComment', { fg = comment, bold = true, italic = true })
 hi('Debug',        { fg = c.fg })
 hi('Underlined',   { fg = c.fg, underline = true })
 hi('Ignore',       { fg = c.subtle })
@@ -173,8 +178,8 @@ hi('@punctuation',        { fg = c.fg })
 hi('@punctuation.bracket',    { fg = c.fg })
 hi('@punctuation.delimiter',  { fg = c.fg })
 hi('@punctuation.special',    { fg = c.fg, bold = true })
-hi('@comment',            { fg = c.dim, italic = true })
-hi('@comment.documentation', { fg = c.dim, italic = true })
+hi('@comment',            { fg = comment, italic = true })
+hi('@comment.documentation', { fg = comment, italic = true })
 hi('@tag',                { fg = c.fg, bold = true })
 hi('@tag.attribute',      { fg = c.fg, italic = true })
 hi('@tag.delimiter',      { fg = c.fg })
