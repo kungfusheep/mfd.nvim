@@ -2,61 +2,82 @@
 
 Monotone colorschemes for Neovim. Aesthetic inspiration from [U.S. Graphics Company](https://usgraphics.com) — thanks for the beautiful work.
 
-Ten variants, from phosphor CRTs to night vision.
+Fourteen variants, from phosphor CRTs to night vision.
 
 > [!TIP]
 > **New:**  
+> `mfd-flir` 4 new thermal display schemes.  
 > `mfd-blackout` true black, ultra-low contrast for late night use.  
 > `bright_comments` option increases comment visibility for all themes.
 
 
 ## Themes
 
-### mfd / mfd-dark
+### MFD / MFD-DARK
 Olive sage.
 
-![mfd](screenshots/mfd.png)
-![mfd-dark](screenshots/mfd-dark.png)
+![MFD](screenshots/mfd.png)
+![MFD-DARK](screenshots/mfd-dark.png)
 
-### mfd-stealth
+### MFD-STEALTH
 Green phosphor.
 
-![mfd-stealth](screenshots/mfd-stealth.png)
+![MFD-STEALTH](screenshots/mfd-stealth.png)
 
-### mfd-amber
+### MFD-AMBER
 Amber phosphor.
 
-![mfd-amber](screenshots/mfd-amber.png)
+![MFD-AMBER](screenshots/mfd-amber.png)
 
-### mfd-mono
+### MFD-MONO
 White phosphor.
 
-![mfd-mono](screenshots/mfd-mono.png)
+![MFD-MONO](screenshots/mfd-mono.png)
 
-### mfd-scarlet
+### MFD-SCARLET
 Deep red.
 
-![mfd-scarlet](screenshots/mfd-scarlet.png)
+![MFD-SCARLET](screenshots/mfd-scarlet.png)
 
-### mfd-paper
+### MFD-PAPER
 High contrast terminal.
 
-![mfd-paper](screenshots/mfd-paper.png)
+![MFD-PAPER](screenshots/mfd-paper.png)
 
-### mfd-hud
+### MFD-HUD
 Heads-up display.
 
-![mfd-hud](screenshots/mfd-hud.png)
+![MFD-HUD](screenshots/mfd-hud.png)
 
-### mfd-nvg
+### MFD-NVG
 Night vision goggles.
 
-![mfd-nvg](screenshots/mfd-nvg.png)
+![MFD-NVG](screenshots/mfd-nvg.png)
 
-### mfd-blackout
+### MFD-BLACKOUT
 Covert lighting conditions.
 
-![mfd-blackout](screenshots/mfd-blackout.png)
+![MFD-BLACKOUT](screenshots/mfd-blackout.png)
+
+### MFD-FLIR
+White-hot thermal.
+
+![MFD-FLIR](screenshots/mfd-flir.png)
+
+### MFD-FLIR-BH
+Black-hot thermal.
+
+![MFD-FLIR-BH](screenshots/mfd-flir-bh.png)
+
+### MFD-FLIR-RH
+Red-hot thermal.
+
+![MFD-FLIR-RH](screenshots/mfd-flir-rh.png)
+
+### MFD-FLIR-FUSION
+Thermal fusion.
+
+![MFD-FLIR-FUSION](screenshots/mfd-flir-fusion.png)
 
 ## Installation
 
