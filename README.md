@@ -4,12 +4,12 @@ Monotone colorschemes for Neovim. Aesthetic inspiration from [U.S. Graphics Comp
 
 Sixteen variants, from phosphor CRTs to night vision.
 
-> [!TIP]
-> **New:**
-> `mfd-gbl` Game Boy Light electroluminescence, dark and light variants.
-> `mfd-flir` 4 thermal display schemes.
-> `mfd-blackout` true black, ultra-low contrast for late night use.
-> `bright_comments` option increases comment visibility for all themes.
+> [!TIP]  
+> **New:**  
+> `mfd-gbl` Game Boy Light electroluminescence, dark and light variants.  
+> `mfd-flir` 4 thermal display schemes.  
+> `mfd-blackout` true black, ultra-low contrast for late night use.  
+> `bright_comments` option increases comment visibility for all themes.  
 
 
 ## Themes
@@ -80,11 +80,15 @@ Thermal fusion.
 
 ![MFD-FLIR-FUSION](screenshots/mfd-flir-fusion.png)
 
-### MFD-GBL-DARK / MFD-GBL-LIGHT
+### MFD-GBL-LIGHT
+Game Boy Light electroluminescence.
+
+![MFD-GBL-LIGHT](screenshots/mfd-gbl-light.png)
+
+### MFD-GBL-DARK
 Game Boy Light electroluminescence.
 
 ![MFD-GBL-DARK](screenshots/mfd-gbl-dark.png)
-![MFD-GBL-LIGHT](screenshots/mfd-gbl-light.png)
 
 ## Installation
 
