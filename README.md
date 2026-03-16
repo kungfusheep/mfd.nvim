@@ -146,6 +146,7 @@ Call `setup()` before setting the colorscheme:
 ```lua
 require('mfd').setup({
   bright_comments = true, -- increase comment visibility (default: false)
+  no_italic = true,       -- disable italic highlighting (default: false)
 })
 ```
 
