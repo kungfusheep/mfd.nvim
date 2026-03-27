@@ -5,6 +5,7 @@ local M = {}
 
 M.config = {
 	bright_comments = false,
+	no_italic = false,
 }
 
 function M.setup(opts)

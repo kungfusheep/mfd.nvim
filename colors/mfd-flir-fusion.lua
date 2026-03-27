@@ -21,7 +21,9 @@ if require('mfd').config.bright_comments then
   comment = '#7A4880'
 end
 
+local no_italic = require('mfd').config.no_italic
 local function hi(group, opts)
+  if no_italic then opts.italic = nil end
   vim.api.nvim_set_hl(0, group, opts)
 end
 
