@@ -2,14 +2,15 @@
 
 Monotone colorschemes for Neovim. Aesthetic inspiration from [U.S. Graphics Company](https://usgraphics.com) — thanks for the beautiful work.
 
-Sixteen variants, from phosphor CRTs to night vision.
+Seventeen variants, from phosphor CRTs to night vision.
 
 > [!TIP]  
-> **New:**  
-> `mfd-gbl` Game Boy Light electroluminescence, dark and light variants.  
-> `mfd-flir` 4 thermal display schemes.  
-> `mfd-blackout` true black, ultra-low contrast for late night use.  
-> `bright_comments` option increases comment visibility for all themes.  
+> **New:**
+> [`mfd-lumon`](#mfd-lumon) Lumon Industries MDR terminal with CRT phosphor glow.
+> `mfd-gbl` Game Boy Light electroluminescence, dark and light variants.
+> `mfd-flir` 4 thermal display schemes.
+> `mfd-blackout` true black, ultra-low contrast for late night use.
+> `bright_comments` option increases comment visibility for all themes.
 
 
 ## Themes
@@ -89,6 +90,14 @@ Game Boy Light electroluminescence.
 Game Boy Light electroluminescence.
 
 ![MFD-GBL-DARK](screenshots/mfd-gbl-dark.png)
+
+### MFD-LUMON
+Lumon Industries Macrodata Refinement terminal.
+
+![MFD-LUMON](screenshots/mfd-lumon.png)
+(with a ghostty CRT shader)
+![MFD-LUMON-CRT](screenshots/mfd-lumon-crt.png)
+
 
 ## Installation
 

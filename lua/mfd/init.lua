@@ -134,6 +134,18 @@ M.palettes = {
 		border = "#009A70",
 		float_bg = "#004F3A",
 	},
+	["mfd-lumon"] = {
+		bg = "#0A1520",
+		fg = "#5AC8D8",
+		glow = "#78DDE8",
+		dim = "#1A3848",
+		bright = "#A0F0FF",
+		subtle = "#143040",
+		visual = "#122838",
+		cursor = "#0E1E2C",
+		border = "#1A3848",
+		float_bg = "#0C1822",
+	},
 }
 
 -- Get palette for current or specified colorscheme
