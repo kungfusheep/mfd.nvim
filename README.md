@@ -1,9 +1,10 @@
 # mfd.nvim
 
-Monotone colorschemes for Neovim. Seventeen variants, from phosphor CRTs to night vision display technologies. Inspired by the aesthetics of military MFDs (multi-function displays) and vintage computer terminals.
+Monotone colorschemes for Neovim. Eighteen variants, from phosphor CRTs to night vision display technologies. Inspired by the aesthetics of military MFDs (multi-function displays) and vintage computer terminals.
 
 > [!TIP]  
 > **New:**  
+> [`mfd-nerv`](#mfd-nerv) Evangelion NERV terminal — Warm orange phosphor + bleed.  
 > `accessibility_contrast` slider (0–10) for [WCAG-compliant contrast](#accessibility).  
 > [`mfd-lumon`](#mfd-lumon) Lumon Industries MDR terminal with CRT phosphor glow.  
 > `mfd-gbl` Game Boy Light electroluminescence, dark and light variants.  
@@ -97,6 +98,11 @@ Lumon Industries Macrodata Refinement terminal.
 (with a ghostty CRT shader)
 ![MFD-LUMON-CRT](screenshots/mfd-lumon-crt.png)
 
+### MFD-NERV
+Evangelion NERV HQ terminal display. Hot orange phosphor with warm bleed.
+
+![MFD-NERV](screenshots/mfd-nerv.png)
+
 
 ## Installation
 
@@ -179,6 +185,7 @@ Even small values make a noticeable difference. You'll likely find a comfortable
 | mfd-gbl-light | AA-UI | AAA |
 | mfd-gbl-dark | AA-UI | AAA |
 | mfd-lumon | AA-UI | AAA |
+| mfd-nerv | AA-UI | AAA |
 | mfd-flir | 2.8 | AAA |
 | mfd-flir-bh | 2.6 | AAA |
 | mfd-flir-rh | 2.8 | AAA |

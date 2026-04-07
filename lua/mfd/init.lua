@@ -148,6 +148,17 @@ M.palettes = {
 		border = "#1A3848",
 		float_bg = "#0C1822",
 	},
+	["mfd-nerv"] = {
+		bg = "#1A0A02",
+		fg = "#EE8822",
+		dim = "#6B3510",
+		bright = "#FFAA44",
+		subtle = "#4A2008",
+		visual = "#2A1208",
+		cursor = "#221005",
+		border = "#4A2008",
+		float_bg = "#180A02",
+	},
 }
 
 -- color math for accessibility contrast
